@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link Icons -->
+    <script src="https://kit.fontawesome.com/a2db0f7c4b.js" crossorigin="anonymous"></script>
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>To Do</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome -->
+        <div class="welcome">
+            <h1><msg></msg>, <span>user</span></h1>
+            <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <!-- Add Task -->
+        <div class="add">
+            <form action="">
+                <input type="text" id="title" placeholder="Title">
+                <textarea id="description" placeholder="Description" cols="30" rows="5"></textarea>
+            </form>
+            <div class="button">
+                <button id="add"><span></span><span></span></button>
+            </div>
+        </div>
+        <!-- Tasks -->
+        <div class="tasks"></div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

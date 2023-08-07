@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: unset;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 100px 15px;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+    width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+    width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+    width: 1170px;
+    }
+}
+body {
+    background-color: #e5e5e5;
+}
+.add {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 70px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #ddd;
+    overflow: hidden;
+}
+.add form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+.add .button {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add form input,
+.add form textarea {
+    padding: 5px;
+    width: 100%;
+    border: unset;
+    border-bottom: solid 1px #d5d5d5;
+    position: relative;
+    pointer-events: auto;
+    transition: 0.3s;
+    caret-color: #3fa4ff;
+    font-size: 17px;
+}
+.add form input:focus,
+.add form textarea:focus {
+    border-color: #3fa4ff;
+}
+.add button {
+    width: 35px;
+    height: 35px;
+    background-color: unset;
+    border: unset;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.add button::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    background: #248eff33;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.add button:hover span {
+    background-color: #003e74;
+}
+.add button span {
+    background-color: #248eff;
+    display: block;
+    border-radius: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    transition: 0.3s;
+}
+.add button span:first-child {
+    height: 2px;
+    width: 100%;
+}
+.add button span:last-child {
+    width: 2px;
+    height: 100%;
+}
+.tasks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.tasks .task {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #ddd;
+    animation-name: task;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    overflow: hidden;
+    filter: grayscale(0.5);
+}
+@keyframes task {
+    from {transform: scale(0.7) translateY(50px);}
+    to {transform: scale(1) translateY(0px);}
+}
+.tasks .task h1 {
+    color: #248eff;
+    text-transform: uppercase;
+}
+.tasks .task h1.done {
+    text-decoration: line-through;
+}
+.tasks .task p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #585858;
+}
+.tasks .task p.done {
+    text-decoration: line-through;
+}
+.tasks .task span {
+    position: absolute;
+    right: 15px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    color: #248eff;
+}
+.tasks .task span.active {
+    color: #00cb40;
+}
+.tasks .task span.active::before {
+    background-color: #00ff9538;
+}
+.tasks .task span:hover {
+    color: #ff1d30;
+}
+.tasks .task span:hover::before {
+    background-color: #ff00001f;
+}
+.tasks .task span::before {
+    content: '';
+    position: absolute;
+    background-color: #248eff33;
+    border-bottom-left-radius: 50%;
+    width: 55px;
+    height: 58px;
+    right: -20px;
+    top: -22px;
+    transition: 0.3s;
+}
+.tasks .task span:last-child::before {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: unset;
+    width: 55px;
+    height: 58px;
+    right: -20px;
+    top: unset;
+    bottom: -22px;
+}
+.tasks .task span:last-child:hover::before {
+    background-color: #00ff9538;
+}
+.tasks .task span:last-child {
+    bottom: 15px;
+    top: unset;
+}
+.tasks .task span:last-child:hover {
+    color: #00cb40;
+}
+.welcome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #ddd;
+}
+.welcome h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.welcome h1 span {
+    color: #248eff;
+}
+.welcome i {
+    font-size: 25px;
+    color: #248eff;
+}
